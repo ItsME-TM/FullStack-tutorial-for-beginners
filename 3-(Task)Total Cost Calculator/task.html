@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Render Multiple Elements</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      function TotalCostCalculator() {
+        const shippingCost = 5;
+        const [productCost, setProductCost] = React.useState(0);
+        const [totalCost, setTotalCost] = React.useState(0);
+
+        function findTotalCost() {
+          const result = shippingCost + Number(productCost);
+          setTotalCost(result);
+        }
+
+        return (
+          <div>
+            <h1>Total Cost Calculator</h1>
+            <label>Product Cost: </label>
+            <input
+              onChange={(event) => {
+                setProductCost(event.target.value);
+                // For debugging purposes, log the event and value
+                // You can see the event object and target value in the console
+                console.log("Event object:", event);
+                console.log("Event target:", event.target);
+                console.log("Input value:", event.target.value);
+              }}
+            />
+            <br />
+            <label>Total Cost: {totalCost}</label>
+            <br />
+            <button onClick={findTotalCost}>Calculate Total Cost</button>
+          </div>
+        );
+      }
+
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(<TotalCostCalculator />);
+    </script>
+  </body>
+</html>
