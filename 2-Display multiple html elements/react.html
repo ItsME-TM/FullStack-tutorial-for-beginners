@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Render Multiple Elements</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+    <script src="react-basic.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+    // In React, to render multiple HTML elements, you need to wrap them in a single parent element.
+    // This can be a <div>, <section>, or even a React Fragment (<></>).
+    // Here, we use a <div> to group the elements together.
+    // You can also include JavaScript expressions inside curly braces {}
+      const element = (
+        <div>
+          <h1>Hi lets Make multiple elements</h1>
+          <p>This is a paragraph</p>
+          <button>Click Me</button>
+          <p>Another paragraph with simple javaScript Code {2 + 3}</p>
+        </div>
+      );
+
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(element);
+    </script>
+  </body>
+</html>
