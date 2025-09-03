@@ -20,9 +20,12 @@
         );
       }
 
-      function ChatMessage(props) {
-        const message = props.message;
-        const sender = props.sender;
+      function ChatMessage({message, sender}) {
+        //const message = props.message;
+        //const {message} = props;
+        //const sender = props.sender;
+        //const {message, sender} = props;
+
         if(sender === "bot"){
           return(
             <div>
@@ -39,7 +42,7 @@
         );
       }
 
-      const div = (
+      const app = (
         <>
           <ChatInput />
           <ChatMessage message="First message" sender="user"/>
@@ -50,7 +53,7 @@
       );
 
       const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(div);
+      ReactDOM.createRoot(container).render(app);
     </script>
   </body>
 </html>
