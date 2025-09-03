@@ -20,10 +20,12 @@
         );
       }
 
-      function ChatMessage() {
+      function ChatMessage(props) {
+        const message = props.message;
+        const sender = props.sender;
         return (
           <div>
-            First message
+            {message}
             <img src="../user.png" width="50"/>
           </div>
         );
@@ -32,7 +34,10 @@
       const div = (
         <>
           <ChatInput />
-          <ChatMessage />
+          <ChatMessage message="First message" sender="user"/>
+          <ChatMessage message="Second message" sender="bot"/>
+          <ChatMessage message="Third message" sender="user"/>
+          <ChatMessage message="Fourth message" sender="bot"/>
         </>
       );
 
