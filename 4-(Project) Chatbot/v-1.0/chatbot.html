@@ -45,7 +45,7 @@
         );
       }
 
-      function App() {
+      function ChatMessages() {
         const chatMessage = [
           {
             id: "id1",
@@ -71,7 +71,6 @@
 
         return (
           <>
-            <ChatInput />
             {chatMessage.map((chatMessage) => {
               return (
                 <ChatMessage
@@ -81,6 +80,15 @@
                 />
               );
             })}
+          </>
+        );
+      }
+
+      function App() {
+        return (
+          <>
+            <ChatInput />
+            <ChatMessages />
           </>
         );
       }
