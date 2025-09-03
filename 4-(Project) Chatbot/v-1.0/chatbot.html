@@ -45,16 +45,41 @@
         );
       }
 
-      function App(){
-        return(
+      function App() {
+        const chatMessage = [
+          {
+            message: "First message",
+            sender: "user",
+          },
+          {
+            message: "Second message",
+            sender: "bot",
+          },
+          {
+            message: "Third message",
+            sender: "user",
+          },
+          {
+            message: "Fourth message",
+            sender: "bot",
+          },
+        ];
+
+        const chatMessageComponents = chatMessage.map((chatMessages) => {
+          return (
+            <ChatMessage
+              message={chatMessages.message}
+              sender={chatMessages.sender}
+            />
+          );
+        });
+        
+        return (
           <>
             <ChatInput />
-            <ChatMessage message="First message" sender="user" />
-            <ChatMessage message="Second message" sender="bot" />
-            <ChatMessage message="Third message" sender="user" />
-            <ChatMessage message="Fourth message" sender="bot" />
+            {chatMessageComponents}
           </>
-      );
+        );
       }
 
       const container = document.querySelector(".js-container");
