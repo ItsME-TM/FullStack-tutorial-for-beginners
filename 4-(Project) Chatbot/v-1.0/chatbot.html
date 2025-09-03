@@ -23,6 +23,14 @@
       function ChatMessage(props) {
         const message = props.message;
         const sender = props.sender;
+        if(sender === "bot"){
+          return(
+            <div>
+              {message}
+              <img src="../bot.png" width="50"/>
+            </div>
+          );
+        }
         return (
           <div>
             {message}
