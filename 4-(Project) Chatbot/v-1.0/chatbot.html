@@ -46,7 +46,7 @@
       }
 
       function ChatMessages() {
-        const chatMessage = [
+        const [chatMessage, setChatMessage] = React.useState([
           {
             id: "id1",
             message: "First message",
@@ -67,8 +67,11 @@
             message: "Fourth message",
             sender: "bot",
           },
-        ];
-        
+        ]);
+
+        //const chatMessage = array[0];
+        //const setChatMessage = array[1]; 
+
         function test() {
           chatMessage.push({
             id: crypto.randomUUID(),
