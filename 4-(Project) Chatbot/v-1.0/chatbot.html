@@ -2,6 +2,24 @@
 <html>
   <head>
     <title>Chatbot</title>
+    <style>
+      .send-button {
+        background-color: rgb(25, 135, 84);
+        color: white;
+        margin-left: 10px;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        font-size: 15px;
+      }
+      .chat-input {
+        padding: 12px 15px;
+        border-radius: 10px;
+        border-width: 1px;
+        font-size: 15px;
+      }
+    </style>
   </head>
   <body>
     <div class="js-container"></div>
@@ -47,9 +65,12 @@
               placeholder="Enter the message here!"
               size="30"
               onChange={saveInputText}
+              className="chat-input"
               value={inputText}
             />
-            <button onClick={sendMessage}>Send</button>
+            <button onClick={sendMessage} className="send-button">
+              Send
+            </button>
           </>
         );
       }
