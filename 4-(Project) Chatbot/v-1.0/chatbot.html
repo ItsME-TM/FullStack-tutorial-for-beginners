@@ -18,6 +18,15 @@
         border-radius: 10px;
         border-width: 1px;
         font-size: 15px;
+        flex-grow: 1;
+      }
+      .chat-input-container{
+        display: flex;
+      }
+      .app-container{
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
     </style>
   </head>
@@ -60,7 +69,7 @@
         }
 
         return (
-          <>
+          <div className="chat-input-container">
             <input
               placeholder="Enter the message here!"
               size="30"
@@ -71,7 +80,7 @@
             <button onClick={sendMessage} className="send-button">
               Send
             </button>
-          </>
+          </div>
         );
       }
 
@@ -92,7 +101,7 @@
         }
           */
         return (
-          <div>
+          <div className={sender === "user" ? "chat-message user" : "chat-message bot"}>
             {sender === "bot" && <img src="../bot.png" width="50" />}
             {message}
             {sender === "user" && <img src="../user.png" width="50" />}
@@ -144,13 +153,13 @@
         ]);
 
         return (
-          <>
+          <div className="app-container">
             <ChatInput
               chatMessages={chatMessages}
               setChatMessages={setChatMessages}
             />
             <ChatMessages chatMessages={chatMessages} />
-          </>
+          </div>
         );
       }
 
