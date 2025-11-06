@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      const container = document.querySelector(".js-container");
+      function Counter() {
+        const [count, setCounter] = React.useState(0);
+        const increment = () => {
+          setCounter(count + 1);
+        };
+        const decrement = () => {
+          setCounter(count - 1);
+        };
+        React.useEffect(() => {
+          console.log("The count value has changed:", count);
+        }, [count]);
+
+        return (
+          <div>
+            <h1>Counter: {count}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
+          </div>
+        );
+      }
+      ReactDOM.createRoot(container).render(<Counter />);
+    </script>
+  </body>
+</html>
