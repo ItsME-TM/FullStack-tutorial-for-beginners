@@ -3,6 +3,9 @@
   <head>
     <title>Chatbot</title>
     <style>
+      .body {
+        font-family: Arial;
+      }
       .send-button {
         background-color: rgb(25, 135, 84);
         color: white;
@@ -18,6 +21,33 @@
         border-radius: 10px;
         border-width: 1px;
         font-size: 15px;
+        flex-grow: 1;
+      }
+      .chat-input-container {
+        display: flex;
+      }
+      .app-container {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .chat-message-user {
+        display: flex;
+        justify-content: end;
+        align-items: start;
+      }
+      .chat-message-text {
+        background-color: rgb(238, 238, 238);
+        padding: 15px 20px;
+        margin-right: 10px;
+        border-radius: 10px;
+        margin-left: 10px;
+        margin-bottom: 20px;
+        max-width: 300px;
+      }
+      .chat-message-bot {
+        display: flex;
+        align-items: start;
       }
     </style>
   </head>
@@ -60,7 +90,7 @@
         }
 
         return (
-          <>
+          <div className="chat-input-container">
             <input
               placeholder="Enter the message here!"
               size="30"
@@ -71,7 +101,7 @@
             <button onClick={sendMessage} className="send-button">
               Send
             </button>
-          </>
+          </div>
         );
       }
 
@@ -92,9 +122,13 @@
         }
           */
         return (
-          <div>
+          <div
+            className={
+              sender === "user" ? "chat-message-user" : "chat-message-bot"
+            }
+          >
             {sender === "bot" && <img src="../bot.png" width="50" />}
-            {message}
+            <div className="chat-message-text">{message}</div>
             {sender === "user" && <img src="../user.png" width="50" />}
           </div>
         );
@@ -144,13 +178,13 @@
         ]);
 
         return (
-          <>
+          <div className="app-container">
             <ChatInput
               chatMessages={chatMessages}
               setChatMessages={setChatMessages}
             />
             <ChatMessages chatMessages={chatMessages} />
-          </>
+          </div>
         );
       }
 
