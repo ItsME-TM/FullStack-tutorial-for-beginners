@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+  <head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Render Multiple Elements</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+      // In React, to render multiple HTML elements, you need to wrap them in a single parent element.
+      // This can be a <div>, <section>, or even a React Fragment (<></>).
+      // Here, we use a <div> to group the elements together.
+      // You can also include JavaScript expressions inside curly braces {}
+
+      function App() {
+        const [numValue1, setNumValue1] = React.useState(" ");
+        const [numValue2, setNumValue2] = React.useState(" ");
+        const [operation, setOperation] = React.useState("+");
+        const [result, setResult] = React.useState(" ");
+        const [error, setError] = React.useState(" ");
+
+        const calculate = () => {
+          const a = parseFloat(numValue1);
+          const b = parseFloat(numValue2);
+          if (isNaN(a) || isNaN(b)) {
+            setError("Please enter numbers");
+            return;
+          }
+          if (operation === "/" && b == 0) {
+            setError("Cannot divide by 0");
+            return;
+          }
+
+          if (operation == "+") setResult(a + b);
+          if (operation == "-") setResult(a - b);
+          if (operation == "/") setResult(a / b);
+          if (operation == "x") setResult(a * b);
+        };
+
+        return (
+          <div id="mainArea">
+            <div className="bg-gray-200 p-4 rounded-lg">
+              <input
+                type="number"
+                value={numValue1}
+                onChange={(e) => setNumValue1(e.target.value)}
+                className="mr-2 p-1 rounded border border-gray-400"
+              />
+              <select
+                value={operation}
+                onChange={(e) => setOperation(e.target.value)}
+                className="mr-2 p-1 rounded border border-gray-400"
+              >
+                <option>+</option>
+                <option>-</option>
+                <option>x</option>
+                <option>/</option>
+              </select>
+              <input
+                type="number"
+                value={numValue2}
+                onChange={(e) => setNumValue2(e.target.value)}
+                className="mr-2 p-1 rounded border border-gray-400"
+              />
+            </div>
+
+            <button 
+            onClick={calculate}
+            className="mt-4 px-4 py-2 bg-blue-500  border border-2 border-black-800 text-white rounded hover:bg-blue-600"
+            >Click to Calculate</button>
+            <button onClick={() => setNumValue1("")}>Reset</button>
+            {error && <p className="text-red-600 font-medium">{error}</p>}
+            {result && <p className="text-green-600 font-medium">{result}</p>}
+          </div>
+        );
+      }
+
+      const container = document.querySelector(".js-container");
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>
