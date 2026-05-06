@@ -41,6 +41,39 @@ These are small Node.js utilities; most include an `info.md` with setup and exam
 - `Node Projects/request-logger` — Simple request logging helpers.
 - `Node Projects/url-shortener` — Tiny URL shortener examples.
 
+## MongoDB Tasks
+
+This repository includes a set of MongoDB practice tasks under `MongoDB Tasks/`. The tasks use a shared example dataset and include Coderbyte-style prompts, example documents, and small verification scripts.
+
+- `MongoDB Tasks/basic_commnds.md` — quick `mongosh` command cheat sheet.
+- `MongoDB Tasks/*/Task.md` — individual task prompts (distinct names, order totals, top products, inactive users, top intents).
+- `MongoDB Tasks/01-Distinct-FirstNames/query.js` — example Node.js script that connects to MongoDB and runs a sample query.
+
+Running the MongoDB tasks (quick options):
+
+- Using `mongosh` (recommended for quick verification):
+
+```sh
+# start the shell
+mongosh
+
+# switch to the shared database used by the tasks
+use mongodb_tasks_shared
+
+# paste the `insertMany` blocks from the Task.md files (or from MongoDB Tasks/setup script if present)
+```
+
+- Using Node.js scripts (optional, for automated checks):
+
+```sh
+cd "MongoDB Tasks/01-Distinct-FirstNames"
+# install the official driver if needed
+npm install mongodb
+node query.js
+```
+
+See each task's `Task.md` for the exact collections and expected output.
+
 ## Example: jwt-validator quick run
 
 1. Install dependencies for the jwt-validator project:
