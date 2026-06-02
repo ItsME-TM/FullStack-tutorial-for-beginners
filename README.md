@@ -4,7 +4,7 @@
 
 # Full-Stack Masterclass: Tutorials for Beginners
 
-Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-contained tutorials and hands-on projects designed to take you from zero to hero in modern web development. This repository covers the three pillars of the modern stack: **React**, **Node.js**, and **MongoDB**.
+Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-contained tutorials and hands-on projects designed to take you from zero to hero in modern web development. This repository covers the four pillars of the modern stack: **React**, **Node.js**, **SQL (SQLite)**, and **NoSQL (MongoDB)**.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
@@ -17,8 +17,8 @@ Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-co
 This repository is structured to provide a consistent learning experience across different technologies. Each tutorial follows a professional pattern:
 - 📖 **Task.md**: Clear requirements and objectives.
 - 🎓 **Tutorial.md**: Theoretical background and concepts.
-- 🚶 **Step-by-Step-Guide.md**: A guided walkthrough for the implementation.
-- 🧪 **Boilerplate**: A starting point with TODOs for you to complete.
+- 🚶 **Step-by-Step-Guide.md**: A guided walkthrough for the implementation (where applicable).
+- 🧪 **Boilerplate / query.sql**: A starting point with TODOs for you to complete.
 - ✅ **Answer/**: A reference solution to verify your work.
 
 ---
@@ -44,8 +44,16 @@ Backend utilities and core Node.js concepts.
 - **Request Logger**: Middleware-style logging.
 - **URL Shortener**: Practical backend application.
 
+### 📊 SQL Tasks
+Relational database management using SQLite.
+- **01. Library Basics**: Filtering data with `SELECT` and `WHERE`.
+- **02. Store Joins**: Combining tables with `INNER JOIN`.
+- **03. Company Aggregates**: Using `GROUP BY` and aggregate functions.
+- **04. Hospital Filtering**: Advanced multi-condition date filtering.
+- **05. University Enrollment**: Many-to-Many relationships and triple joins.
+
 ### 🍃 MongoDB Tasks
-Database aggregation and management challenges.
+NoSQL database aggregation and management challenges.
 - **01. Distinct First Names**: Basic querying and distinct sets.
 - **02. Order Total Calculator**: Mathematical aggregations.
 - **03. Top Products By Revenue**: Complex data analysis.
@@ -58,22 +66,32 @@ Database aggregation and management challenges.
 
 ### 1. Prerequisites
 - [Node.js](https://nodejs.org/) (v16 or higher)
-- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (for database tasks)
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (for MongoDB tasks)
+- [SQLite3](https://sqlite.org/index.html) (usually pre-installed on most OS; otherwise used via `npm`)
 
 ### 2. Database Setup
-If you are starting the MongoDB tasks, you must seed your local database first:
+Depending on which tasks you are starting, you must seed your local database:
+
+**For MongoDB Tasks:**
 ```bash
 cd "MongoDB Tasks"
 npm install
 node setup-database.js
 ```
 
+**For SQL Tasks:**
+```bash
+cd "SQL Tasks"
+npm install
+node setup-db.js
+```
+
 ### 3. Running Tutorials
 - **React**: Simply open the `.html` files in any modern web browser.
-- **Node/MongoDB**: Navigate to the specific project folder and run:
+- **Node/MongoDB**: Navigate to the specific project folder and run `npm install`, then `node [filename].js`.
+- **SQL**: Navigate to the task folder and run the query against the database:
   ```bash
-  npm install
-  node [filename].js
+  sqlite3 tutorial.db < folder-name/query.sql
   ```
 
 ---
