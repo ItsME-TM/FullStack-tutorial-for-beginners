@@ -7,7 +7,15 @@ const jwt = require("jsonwebtoken");
  * @returns {Object} An object containing { ok: true, decoded } or { ok: false, error }
  */
 function validateToken(token, secret) {
-  // TODO: Implement token validation using jwt.verify()
+  if (!token) throw new Error("No token provided");
+  if (!secret) throw new Error("Secret key is required");
+  
+  try {
+    const decoded = jwt.verify(token, secret);
+    return { ok: true, decoded };
+  } catch (error) {
+    return { ok: false, error: error.message };
+  }
 }
 
 /**
@@ -16,7 +24,15 @@ function validateToken(token, secret) {
  * @returns {string} A message indicating if the token is valid or expired
  */
 function checkExpiry(token) {
-  // TODO: Implement expiry check using jwt.decode()
+  if (!token) throw new Error("No token provided");
+  
+  const decoded = jwt.decode(token);
+  if (!decoded || !decoded.exp) {
+    throw new Error("Invalid token: Unable to decode or missing expiry");
+  }
+  
+  const currentTime = Math.floor(Date.now() / 1000);
+  return decoded.exp > currentTime ? "Token is valid" : "Token has expired";
 }
 
 /**
@@ -25,12 +41,16 @@ function checkExpiry(token) {
  * @returns {Object} The decoded payload
  */
 function decodeToken(token) {
-  // TODO: Implement decoding using jwt.decode()
+  if (!token) throw new Error("No token provided");
+  
+  const decoded = jwt.decode(token);
+  if (!decoded) {
+    throw new Error("Invalid token: Unable to decode");
+  }
+  
+  return decoded;
 }
 
-/**
- * Exports the JWT utility functions for use in other modules
- */
 module.exports = {
   validateToken,
   checkExpiry,
