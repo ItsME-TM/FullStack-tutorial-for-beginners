@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Total Cost Calculator</title>
+    <title>Render Multiple Elements</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -12,11 +12,13 @@
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
       function TotalCostCalculator() {
-        // TODO: Create state for productCost and totalCost
-        // TODO: Create a shippingCost variable set to 5
+        const shippingCost = 5;
+        const [productCost, setProductCost] = React.useState(0);
+        const [totalCost, setTotalCost] = React.useState(0);
 
         function findTotalCost() {
-          // TODO: Calculate the total cost and update the state
+          const result = shippingCost + Number(productCost);
+          setTotalCost(result);
         }
 
         return (
@@ -24,14 +26,17 @@
             <h1>Total Cost Calculator</h1>
             <label>Product Cost: </label>
             <input
-              type="number"
               onChange={(event) => {
-                // TODO: Update productCost state
+                setProductCost(event.target.value);
+                // For debugging purposes, log the event and value
+                // You can see the event object and target value in the console
+                console.log("Event object:", event);
+                console.log("Event target:", event.target);
+                console.log("Input value:", event.target.value);
               }}
             />
             <br />
-            {/* TODO: Display Total Cost here */}
-            <label>Total Cost: </label>
+            <label>Total Cost: {totalCost}</label>
             <br />
             <button onClick={findTotalCost}>Calculate Total Cost</button>
           </div>
