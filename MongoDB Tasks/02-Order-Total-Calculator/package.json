@@ -1,0 +1,9 @@
+{
+  "name": "02-order-total-calculator",
+  "version": "1.0.0",
+  "description": "Calculate the total amount for each order based on line items.",
+  "main": "query.js",
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

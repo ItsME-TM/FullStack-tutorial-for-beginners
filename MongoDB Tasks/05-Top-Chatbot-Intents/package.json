@@ -1,0 +1,9 @@
+{
+  "name": "05-top-chatbot-intents",
+  "version": "1.0.0",
+  "description": "Find the top 5 chatbot intents in the last 7 days.",
+  "main": "query.js",
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

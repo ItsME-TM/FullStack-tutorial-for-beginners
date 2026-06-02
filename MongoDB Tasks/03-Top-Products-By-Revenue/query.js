@@ -7,13 +7,14 @@ async function main() {
   try {
     await client.connect();
     const db = client.db('mongodb_tasks_shared');
-    const users = db.collection('users');
+    const orders = db.collection('orders');
 
-    // TODO: Write a MongoDB query or aggregation pipeline that returns 
-    // the distinct values of firstName in ascending order.
-    // Each result should have a single field named firstName.
-    
-    const results = await users.aggregate([
+    // TODO: Write an aggregation pipeline that returns the top 3 SKUs by total revenue.
+    // Revenue per SKU is the sum of (qty * price) for that SKU across all items in all orders.
+    // Each result should have 'sku' and 'revenue' fields.
+    // Sort by revenue descending, then sku ascending.
+
+    const results = await orders.aggregate([
       // Your pipeline here
     ]).toArray();
 

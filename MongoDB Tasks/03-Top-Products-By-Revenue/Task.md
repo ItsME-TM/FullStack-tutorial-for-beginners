@@ -2,9 +2,11 @@
 
 ## Goal
 
-Find the top 3 products by total revenue across all orders.
+Find the top 5 products by total revenue across all orders.
 
 ## Shared Dataset
+
+**Important:** Before starting, ensure you have run the setup script in the parent directory: `node ../setup-database.js`
 
 Database: mongodb_tasks_shared
 Collections: users, orders, sessions, chat_logs
@@ -34,14 +36,14 @@ orders
 
 ## Task
 
-Write an aggregation pipeline that returns the top 3 SKUs by total revenue.
+Write an aggregation pipeline that returns the top 5 SKUs by total revenue.
 Revenue per SKU is the sum of qty \* price across all orders.
 
 ## Output Format
 
 Return fields sku and revenue.
 Sort by revenue descending, then sku ascending.
-Limit to 3 results.
+Limit to 5 results.
 
 ## Example Output
 

@@ -6,6 +6,8 @@ Calculate the total amount for each order based on line items.
 
 ## Shared Dataset
 
+**Important:** Before starting, ensure you have run the setup script in the parent directory: `node ../setup-database.js`
+
 Database: mongodb_tasks_shared
 Collections: users, orders, sessions, chat_logs
 

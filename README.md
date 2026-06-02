@@ -1,94 +1,97 @@
-# React Beginners Tutorials
+<p align="center">
+  <img src="banner.svg" alt="Full-Stack Masterclass Banner" width="800">
+</p>
 
-Welcome — a collection of small, self-contained React example pages and several Node.js utility projects used for learning and experimentation.
+# Full-Stack Masterclass: Tutorials for Beginners
 
-## Quick start
+Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-contained tutorials and hands-on projects designed to take you from zero to hero in modern web development. This repository covers the three pillars of the modern stack: **React**, **Node.js**, and **MongoDB**.
 
-- **View HTML examples:** Open the HTML files in a browser (double-click) or serve the repository with a simple static server, e.g.:
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
+[![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-blue.svg)](CODE_OF_CONDUCT.md)
 
+---
+
+## 🚀 Project Overview
+
+This repository is structured to provide a consistent learning experience across different technologies. Each tutorial follows a professional pattern:
+- 📖 **Task.md**: Clear requirements and objectives.
+- 🎓 **Tutorial.md**: Theoretical background and concepts.
+- 🚶 **Step-by-Step-Guide.md**: A guided walkthrough for the implementation.
+- 🧪 **Boilerplate**: A starting point with TODOs for you to complete.
+- ✅ **Answer/**: A reference solution to verify your work.
+
+---
+
+## 🛠️ Repository Structure
+
+### ⚛️ React Tutorials
+Interactive UI components built with React (CDN-based for easy setup).
+- **1. Introduction**: Setup and basic rendering.
+- **2. Display Multiple Elements**: JSX rules and fragments.
+- **3. Total Cost Calculator**: `useState` and event handling.
+- **4. Chatbot Project**: Props, components, and mapping lists.
+- **5. Hooks**: Deep dive into `useState` and `useEffect`.
+- **6. Calculator**: Advanced state management and logic.
+
+### 🟢 Node.js Projects
+Backend utilities and core Node.js concepts.
+- **API Key Manager**: Secure key generation.
+- **CSV Tools**: Data processing.
+- **File Validator**: System-level checks.
+- **JWT Validator**: Security and authentication.
+- **Password Utils**: Hashing with Bcrypt.
+- **Request Logger**: Middleware-style logging.
+- **URL Shortener**: Practical backend application.
+
+### 🍃 MongoDB Tasks
+Database aggregation and management challenges.
+- **01. Distinct First Names**: Basic querying and distinct sets.
+- **02. Order Total Calculator**: Mathematical aggregations.
+- **03. Top Products By Revenue**: Complex data analysis.
+- **04. Inactive Users**: Joins (`$lookup`) and date filtering.
+- **05. Top Chatbot Intents**: Real-time log analysis.
+
+---
+
+## 🚦 Getting Started
+
+### 1. Prerequisites
+- [Node.js](https://nodejs.org/) (v16 or higher)
+- [MongoDB Community Server](https://www.mongodb.com/try/download/community) (for database tasks)
+
+### 2. Database Setup
+If you are starting the MongoDB tasks, you must seed your local database first:
 ```bash
-# from repository root
-npx http-server . -p 8080
-# then open http://localhost:8080/1-Introduction/react-basic.html
-```
-
-- **Node.js projects:** Many helper utilities live under `Node Projects/` and require Node.js (v14+ recommended). For each Node project:
-
-```bash
-cd "Node Projects/<project-name>"
+cd "MongoDB Tasks"
 npm install
-# read the project's info.md for usage examples
+node setup-database.js
 ```
 
-## React tutorial pages (static)
+### 3. Running Tutorials
+- **React**: Simply open the `.html` files in any modern web browser.
+- **Node/MongoDB**: Navigate to the specific project folder and run:
+  ```bash
+  npm install
+  node [filename].js
+  ```
 
-- **Introduction:** [1-Introduction/react-basic.html](1-Introduction/react-basic.html) — Basic React concepts and setup.
-- **Display Multiple Elements:** [2-Display multiple html elements/react.html](2-Display multiple html elements/react.html) — Rendering multiple elements.
-- **Total Cost Calculator (Task):** [3-(Task)Total Cost Calculator/task.html](3-(Task)Total Cost Calculator/task.html) — Build a simple cost calculator.
-- **Chatbot (Project):** [4-(Project) Chatbot/v-1.0/chatbot.html](4-(Project) Chatbot/v-1.0/chatbot.html) — Small chatbot demo.
-- **Hooks Examples:** [5-Hooks/hooks_basic_1.html](5-Hooks/hooks_basic_1.html), [5-Hooks/hooks_basic_2.html](5-Hooks/hooks_basic_2.html) — Hooks demonstrations.
-- **Calculator:** [6-calculator/calculator.html](6-calculator/calculator.html) — Simple calculator project.
+---
 
-## Node Projects (utilities)
+## 🤝 Contributing
 
-These are small Node.js utilities; most include an `info.md` with setup and examples.
+Contributions are what make the open-source community such an amazing place! Whether it's fixing a bug, improving documentation, or adding a new tutorial, your help is appreciated.
 
-- `Node Projects/api-key-manager` — API key generation and storage examples.
-- `Node Projects/csv-tools` — CSV processing helpers.
-- `Node Projects/file-validator` — File validation utilities.
-- `Node Projects/jwt-validator` — JWT generator/validator examples (see `Node Projects/jwt-validator/info.md`).
-- `Node Projects/password-utils` — Password hashing and checking utilities.
-- `Node Projects/request-logger` — Simple request logging helpers.
-- `Node Projects/url-shortener` — Tiny URL shortener examples.
+Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before getting started.
 
-## MongoDB Tasks
+---
 
-This repository includes a set of MongoDB practice tasks under `MongoDB Tasks/`. The tasks use a shared example dataset and include Coderbyte-style prompts, example documents, and small verification scripts.
+## 📄 License
 
-- `MongoDB Tasks/basic_commnds.md` — quick `mongosh` command cheat sheet.
-- `MongoDB Tasks/*/Task.md` — individual task prompts (distinct names, order totals, top products, inactive users, top intents).
-- `MongoDB Tasks/01-Distinct-FirstNames/query.js` — example Node.js script that connects to MongoDB and runs a sample query.
+Distributed under the MIT License. See `LICENSE` for more information.
 
-Running the MongoDB tasks (quick options):
+---
 
-- Using `mongosh` (recommended for quick verification):
-
-```sh
-# start the shell
-mongosh
-
-# switch to the shared database used by the tasks
-use mongodb_tasks_shared
-
-# paste the `insertMany` blocks from the Task.md files (or from MongoDB Tasks/setup script if present)
-```
-
-- Using Node.js scripts (optional, for automated checks):
-
-```sh
-cd "MongoDB Tasks/01-Distinct-FirstNames"
-# install the official driver if needed
-npm install mongodb
-node query.js
-```
-
-See each task's `Task.md` for the exact collections and expected output.
-
-## Example: jwt-validator quick run
-
-1. Install dependencies for the jwt-validator project:
-
-```bash
-cd "Node Projects/jwt-validator"
-npm install
-```
-
-2. Generate a test token and validate it (examples live in `Node Projects/jwt-validator/info.md`). On Windows copy the token printed by the generator and use it with the validator; on macOS/Linux you can pipe or use `$()` substitution.
-
-## Contributing
-
-Contributions are welcome — open issues or submit PRs. If you add utilities, please include an `info.md` with basic run instructions and expected outputs.
-
-## License
-
-Feel free to use these examples for learning and personal projects.
+<p align="center">
+  Developed with ❤️ for the Developer Community
+</p>

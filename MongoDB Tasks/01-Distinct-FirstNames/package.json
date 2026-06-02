@@ -1,16 +1,9 @@
 {
   "name": "01-distinct-firstnames",
   "version": "1.0.0",
-  "description": "",
+  "description": "Return all distinct first names from the users collection, sorted alphabetically.",
   "main": "query.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
-    "mongoose": "^9.6.1"
+    "mongodb": "^6.0.0"
   }
 }

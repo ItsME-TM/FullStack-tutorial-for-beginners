@@ -7,13 +7,14 @@ async function main() {
   try {
     await client.connect();
     const db = client.db('mongodb_tasks_shared');
-    const users = db.collection('users');
+    const orders = db.collection('orders');
 
-    // TODO: Write a MongoDB query or aggregation pipeline that returns 
-    // the distinct values of firstName in ascending order.
-    // Each result should have a single field named firstName.
-    
-    const results = await users.aggregate([
+    // TODO: Write an aggregation pipeline that returns each order with its total value.
+    // Total value is the sum of qty * price for all items in the order.
+    // Return fields _id and orderTotal only.
+    // Sort by _id ascending.
+
+    const results = await orders.aggregate([
       // Your pipeline here
     ]).toArray();
 

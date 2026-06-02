@@ -9,12 +9,23 @@ async function main() {
     const db = client.db('mongodb_tasks_shared');
     const users = db.collection('users');
 
-    // TODO: Write a MongoDB query or aggregation pipeline that returns 
-    // the distinct values of firstName in ascending order.
-    // Each result should have a single field named firstName.
-    
     const results = await users.aggregate([
-      // Your pipeline here
+      {
+        $group: {
+          _id: "$firstName"
+        }
+      },
+      {
+        $project: {
+          _id: 0,
+          firstName: "$_id"
+        }
+      },
+      {
+        $sort: {
+          firstName: 1
+        }
+      }
     ]).toArray();
 
     console.log(JSON.stringify(results, null, 2));
