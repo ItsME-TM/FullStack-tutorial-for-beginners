@@ -20,7 +20,7 @@ We are always looking for new tutorials or better ways to explain concepts. If y
    - `Tutorial.md`: Theoretical background.
    - `Step-by-Step-Guide.md`: Implementation walkthrough.
    - `Answer/`: Completed solution.
-   - Root file: Boilerplate with `// TODO` comments.
+   - Root file: Boilerplate (e.g., `.js`, `.sql`, `.html`) with TODO comments for the student to complete.
 3. **Test your code** to ensure it works as expected.
 4. **Submit a pull request** with a clear description of what you've done.
 

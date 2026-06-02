@@ -1,0 +1,9 @@
+{
+  "name": "sql-tasks",
+  "version": "1.0.0",
+  "description": "SQL practice tasks using SQLite",
+  "main": "setup-db.js",
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  }
+}
