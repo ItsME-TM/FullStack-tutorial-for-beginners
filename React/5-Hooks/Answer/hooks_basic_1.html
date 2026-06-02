@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>React Hooks - Counter</title>
+    <title>React Basics</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -13,14 +13,22 @@
     <script type="text/babel">
       const container = document.querySelector(".js-container");
       function Counter() {
-        // TODO: Create state for count
-        // TODO: Use useEffect to log count whenever it changes
+        const [count, setCounter] = React.useState(0);
+        const increment = () => {
+          setCounter(count + 1);
+        };
+        const decrement = () => {
+          setCounter(count - 1);
+        };
+        React.useEffect(() => {
+          console.log("The count value has changed:", count);
+        }, [count]);
 
         return (
           <div>
-            <h1>Counter: {/* TODO: Display count */}</h1>
-            <button onClick={() => {/* TODO */}}>Increment</button>
-            <button onClick={() => {/* TODO */}}>Decrement</button>
+            <h1>Counter: {count}</h1>
+            <button onClick={increment}>Increment</button>
+            <button onClick={decrement}>Decrement</button>
           </div>
         );
       }

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Render Multiple Elements</title>
+    <title>React Basics</title>
   </head>
   <body>
     <div class="js-container"></div>
@@ -11,16 +11,8 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      // TODO: Render multiple HTML elements (h1, p, button, etc.)
-      // Wrap them in a single parent element like <div> or <>
-      const element = (
-        <div>
-          {/* TODO: Add your elements here */}
-        </div>
-      );
-
       const container = document.querySelector(".js-container");
-      ReactDOM.createRoot(container).render(element);
+      ReactDOM.createRoot(container).render("Lets learn React!");
     </script>
   </body>
 </html>

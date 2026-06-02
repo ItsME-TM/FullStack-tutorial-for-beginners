@@ -11,11 +11,16 @@
 
     <script src="https://unpkg.com/supersimpledev/babel.js"></script>
     <script type="text/babel">
-      // TODO: Render multiple HTML elements (h1, p, button, etc.)
-      // Wrap them in a single parent element like <div> or <>
+    // In React, to render multiple HTML elements, you need to wrap them in a single parent element.
+    // This can be a <div>, <section>, or even a React Fragment (<></>).
+    // Here, we use a <div> to group the elements together.
+    // You can also include JavaScript expressions inside curly braces {}
       const element = (
         <div>
-          {/* TODO: Add your elements here */}
+          <h1>Hi lets Make multiple elements</h1>
+          <p>This is a paragraph</p>
+          <button>Click Me</button>
+          <p>Another paragraph with simple javaScript Code {2 + 3}</p>
         </div>
       );
 
