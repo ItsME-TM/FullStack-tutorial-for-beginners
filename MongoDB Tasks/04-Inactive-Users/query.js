@@ -9,10 +9,15 @@ async function main() {
     const db = client.db('mongodb_tasks_shared');
     const users = db.collection('users');
 
-    // TODO: Write a MongoDB query or aggregation pipeline that returns 
-    // the distinct values of firstName in ascending order.
-    // Each result should have a single field named firstName.
-    
+    // For testing, assume 'now' is 2026-05-06T00:00:00Z
+    const now = new Date("2026-05-06T00:00:00Z");
+    const cutoffDate = new Date(now.setDate(now.getDate() - 90));
+
+    // TODO: Write an aggregation pipeline to find active users who:
+    // 1. Have not logged in within the last 90 days (lastLogin < cutoffDate)
+    // 2. OR have no session records at all.
+    // Return only _id and email, sorted by _id ascending.
+
     const results = await users.aggregate([
       // Your pipeline here
     ]).toArray();

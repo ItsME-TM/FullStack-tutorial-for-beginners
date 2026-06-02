@@ -6,6 +6,8 @@ Find the top 5 chatbot intents in the last 7 days.
 
 ## Shared Dataset
 
+**Important:** Before starting, ensure you have run the setup script in the parent directory: `node ../setup-database.js`
+
 Database: mongodb_tasks_shared
 Collections: users, orders, sessions, chat_logs
 

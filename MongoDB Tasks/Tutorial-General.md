@@ -1,3 +1,29 @@
+# MongoDB Tutorial: Getting Started
+
+Before you start any tasks, you must set up your local database with the required test data.
+
+## 1. Prerequisites
+- Ensure **MongoDB** is installed and running on your machine.
+- Ensure **Node.js** is installed.
+
+## 2. One-Time Database Setup
+Navigate to the `MongoDB Tasks` directory and run the setup script. This will create the `mongodb_tasks_shared` database and populate it with users, orders, and logs.
+
+```bash
+# Navigate to the folder
+cd "MongoDB Tasks"
+
+# Install dependencies
+npm install
+
+# Run the setup script
+node setup-database.js
+```
+
+You should see a message: `"Database 'mongodb_tasks_shared' has been successfully populated!"`
+
+---
+
 # MongoDB Basic Commands (mongosh)
 
 ## Databases

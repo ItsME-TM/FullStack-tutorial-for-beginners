@@ -1,0 +1,9 @@
+{
+  "name": "03-top-products-by-revenue",
+  "version": "1.0.0",
+  "description": "Find the top 3 products by total revenue across all orders.",
+  "main": "query.js",
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}

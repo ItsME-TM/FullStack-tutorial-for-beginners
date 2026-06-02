@@ -1,0 +1,9 @@
+{
+  "name": "04-inactive-users",
+  "version": "1.0.0",
+  "description": "Find active users who have not logged in within the last 90 days.",
+  "main": "query.js",
+  "dependencies": {
+    "mongodb": "^6.0.0"
+  }
+}
