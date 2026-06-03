@@ -9,6 +9,7 @@ Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-co
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](CONTRIBUTING.md)
 [![Code of Conduct](https://img.shields.io/badge/Code%20of%20Conduct-Contributor%20Covenant-blue.svg)](CODE_OF_CONDUCT.md)
+[![All Contributors](https://img.shields.io/github/all-contributors/ItsME-TM/FullStack-tutorial-for-beginners?color=ee8449&style=flat-square)](#contributors)
 
 ---
 
@@ -101,6 +102,18 @@ node setup-db.js
 Contributions are what make the open-source community such an amazing place! Whether it's fixing a bug, improving documentation, or adding a new tutorial, your help is appreciated.
 
 Please read our [Contributing Guidelines](CONTRIBUTING.md) and [Code of Conduct](CODE_OF_CONDUCT.md) before getting started.
+
+---
+
+## 👥 Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+<!-- ALL-CONTRIBUTORS-LIST:END -->
 
 ---
 
