@@ -16,6 +16,7 @@ Welcome to the **Full-Stack Masterclass**, a comprehensive collection of self-co
 ## 🚀 Project Overview
 
 This repository is structured to provide a consistent learning experience across different technologies. Each tutorial follows a professional pattern:
+
 - 📖 **Task.md**: Clear requirements and objectives.
 - 🎓 **Tutorial.md**: Theoretical background and concepts.
 - 🚶 **Step-by-Step-Guide.md**: A guided walkthrough for the implementation (where applicable).
@@ -27,7 +28,9 @@ This repository is structured to provide a consistent learning experience across
 ## 🛠️ Repository Structure
 
 ### ⚛️ React Tutorials
+
 Interactive UI components built with React (CDN-based for easy setup).
+
 - **1. Introduction**: Setup and basic rendering.
 - **2. Display Multiple Elements**: JSX rules and fragments.
 - **3. Total Cost Calculator**: `useState` and event handling.
@@ -36,7 +39,9 @@ Interactive UI components built with React (CDN-based for easy setup).
 - **6. Calculator**: Advanced state management and logic.
 
 ### 🟢 Node.js Projects
+
 Backend utilities and core Node.js concepts.
+
 - **API Key Manager**: Secure key generation.
 - **CSV Tools**: Data processing.
 - **File Validator**: System-level checks.
@@ -46,7 +51,9 @@ Backend utilities and core Node.js concepts.
 - **URL Shortener**: Practical backend application.
 
 ### 📊 SQL Tasks
+
 Relational database management using SQLite.
+
 - **01. Library Basics**: Filtering data with `SELECT` and `WHERE`.
 - **02. Store Joins**: Combining tables with `INNER JOIN`.
 - **03. Company Aggregates**: Using `GROUP BY` and aggregate functions.
@@ -54,7 +61,9 @@ Relational database management using SQLite.
 - **05. University Enrollment**: Many-to-Many relationships and triple joins.
 
 ### 🍃 MongoDB Tasks
+
 NoSQL database aggregation and management challenges.
+
 - **01. Distinct First Names**: Basic querying and distinct sets.
 - **02. Order Total Calculator**: Mathematical aggregations.
 - **03. Top Products By Revenue**: Complex data analysis.
@@ -66,14 +75,17 @@ NoSQL database aggregation and management challenges.
 ## 🚦 Getting Started
 
 ### 1. Prerequisites
+
 - [Node.js](https://nodejs.org/) (v16 or higher)
 - [MongoDB Community Server](https://www.mongodb.com/try/download/community) (for MongoDB tasks)
 - [SQLite3](https://sqlite.org/index.html) (usually pre-installed on most OS; otherwise used via `npm`)
 
 ### 2. Database Setup
+
 Depending on which tasks you are starting, you must seed your local database:
 
 **For MongoDB Tasks:**
+
 ```bash
 cd "MongoDB Tasks"
 npm install
@@ -81,6 +93,7 @@ node setup-database.js
 ```
 
 **For SQL Tasks:**
+
 ```bash
 cd "SQL Tasks"
 npm install
@@ -88,6 +101,7 @@ node setup-db.js
 ```
 
 ### 3. Running Tutorials
+
 - **React**: Simply open the `.html` files in any modern web browser.
 - **Node/MongoDB**: Navigate to the specific project folder and run `npm install`, then `node [filename].js`.
 - **SQL**: Navigate to the task folder and run the query against the database:

@@ -1,4 +1,14 @@
 {
   "projectName": "FullStack-tutorial-for-beginners",
-  "projectOwner": "ItsME-TM"
+  "projectOwner": "ItsME-TM",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": ["README.md"],
+  "imageSize": 100,
+  "commit": false,
+  "commitConvention": "angular",
+  "contributorsPerLine": 7,
+  "contributorsSortAlphabetically": false,
+  "skipCi": true,
+  "contributors": []
 }
