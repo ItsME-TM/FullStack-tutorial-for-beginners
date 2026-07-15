@@ -1,1 +1,13 @@
 node_modules/
+appsettings.Development.json
+
+# .NET Core
+bin/
+obj/
+*.user
+*.csproj.user
+*.vs/
+[Bb]in/
+[Oo]bj/
+.vs/
+TestResults/
