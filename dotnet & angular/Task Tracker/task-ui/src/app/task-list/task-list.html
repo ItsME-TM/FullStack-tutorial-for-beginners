@@ -1,0 +1,8 @@
+<div class="task-list">
+  <h2>Tasks</h2>
+  <ul>
+    @for (task of tasks; track task.id) {
+      <li>{{ task.title }} - {{ task.isCompleted ? 'Completed' : 'Pending' }}</li>
+    }
+  </ul>
+</div>
