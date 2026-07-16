@@ -1,0 +1,26 @@
+.task-list {
+  max-width: 600px;
+  margin: 20px auto;
+}
+
+.add-form {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888;
+}
