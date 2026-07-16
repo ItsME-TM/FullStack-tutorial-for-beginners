@@ -1,0 +1,10 @@
+.add-form{
+    display: flex;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.task-list{
+    max-width: 600px;
+    margin: 20px auto;
+}

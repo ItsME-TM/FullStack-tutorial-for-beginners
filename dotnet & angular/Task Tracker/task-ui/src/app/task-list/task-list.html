@@ -1,8 +1,55 @@
 <div class="task-list">
   <h2>Tasks</h2>
-  <ul>
+  <!-- <ul>
     @for (task of tasks; track task.id) {
       <li>{{ task.title }} - {{ task.isCompleted ? 'Completed' : 'Pending' }}</li>
     }
-  </ul>
+  </ul> -->
+  <div class="add-form">
+    <input
+      type="text"
+      [(ngModel)]="newTaskTitle"
+      placeholder="Enter new task"
+      (keyup.enter)="addTask()"
+    />
+    <button (click)="addTask()">Add Task</button>
+  </div>
+  <table>
+    <thead>
+      <tr>
+        <th>Done</th>
+        <th>Status</th>
+        <th>Title</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (task of tasks(); track task.id) {
+        <tr>
+          <td>
+            <input type="checkbox" [checked]="task.isCompleted" (change)="toggleCompleted(task)" />
+          </td>
+          <td>
+            @if (editingTaskId === task.id) {
+              <input type="text" [(ngModel)]="editTitle" />
+            } @else {
+              <span [class.completed]="task.isCompleted">{{ task.title }}</span>
+            }
+          </td>
+          <td>
+            @if (editingTaskId === task.id) {
+              <button (click)="saveEdit(task)">Save</button>
+              <button (click)="cancelEdit()">Cancel</button>
+            } @else {
+              <button (click)="startEdit(task)">Edit</button>
+              <button (click)="deleteTask(task.id)">Delete</button>
+            }
+          </td>
+        </tr>
+      } @empty {
+        <tr>
+          <td colspan="3">No tasks yet.</td>
+        </tr>
+      }
+    </tbody>
+  </table>
 </div>
